@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>ui</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>ui</name>
     <description>Demo project for Spring Boot</description>
 
@@ -33,15 +33,14 @@
             <version>2.1.0</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
     </dependencies>
 

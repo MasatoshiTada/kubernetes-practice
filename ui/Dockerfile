@@ -1,9 +1,11 @@
-FROM adoptopenjdk/openjdk11:jdk-11.0.3_7
+FROM adoptopenjdk/openjdk11:jdk-11.0.4_11-slim
 
 RUN mkdir /opt/app
 
-COPY target/ui-1.0-SNAPSHOT.jar /opt/app
+COPY target/ui-0.0.1.jar /opt/app
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "ui-1.0-SNAPSHOT.jar"]
+#ENV SPRING_PROFILES_ACTIVE=docker
+
+CMD ["java", "-jar", "/opt/app/ui-0.0.1.jar"]
