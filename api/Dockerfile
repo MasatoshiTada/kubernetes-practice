@@ -4,7 +4,7 @@ RUN mkdir /opt/app
 
 COPY target/api-0.0.1.jar /opt/app
 
-EXPOSE 8080
+EXPOSE 8090
 
 #ENV SPRING_PROFILES_ACTIVE=docker
 

@@ -11,7 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>api</artifactId>
     <version>0.0.1</version>
-    <name>ui</name>
+    <name>api</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -29,12 +29,12 @@
             <version>2.1.0</version>
         </dependency>
 
-        <!-- <dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.17</version>
             <scope>runtime</scope>
-        </dependency> -->
+        </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
