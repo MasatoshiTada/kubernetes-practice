@@ -1,8 +1,9 @@
-package com.example.ui.persistence.mapper;
+package com.example.api.persistence.mapper;
 
-import com.example.ui.persistence.entity.Customer;
+import com.example.api.persistence.entity.Customer;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -21,5 +22,6 @@ public interface CustomerMapper {
 
     @Insert("INSERT INTO customer(first_name, last_name, email, birthday)" +
             " VALUES(#{firstName}, #{lastName}, #{email}, #{birthday})")
+    @Options(useGeneratedKeys = true, keyColumn = "id", keyProperty = "id")
     void insert(Customer customer);
 }

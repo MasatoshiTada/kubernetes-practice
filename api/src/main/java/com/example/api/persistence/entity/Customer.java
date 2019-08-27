@@ -1,4 +1,4 @@
-package com.example.ui.persistence.entity;
+package com.example.api.persistence.entity;
 
 import java.time.LocalDate;
 

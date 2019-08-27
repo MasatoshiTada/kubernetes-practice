@@ -1,6 +1,6 @@
-package com.example.ui.web.form;
+package com.example.api.web.request;
 
-import com.example.ui.persistence.entity.Customer;
+import com.example.api.persistence.entity.Customer;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-public class CustomerForm {
+public class CustomerRequest {
 
     @NotBlank
     @Length(min = 1, max = 32)
@@ -26,7 +26,7 @@ public class CustomerForm {
     @DateTimeFormat(pattern = "uuuu-MM-dd")
     private LocalDate birthday;
 
-    public CustomerForm() {}
+    public CustomerRequest() {}
 
     public String getFirstName() {
         return firstName;

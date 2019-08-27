@@ -1,7 +1,8 @@
 package com.example.ui.web.controller;
 
-import com.example.ui.persistence.entity.Customer;
 import com.example.ui.service.CustomerService;
+import com.example.ui.service.request.CustomerRequest;
+import com.example.ui.service.response.CustomerResponse;
 import com.example.ui.web.form.CustomerForm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +12,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class CustomerController {
@@ -29,7 +32,7 @@ public class CustomerController {
      */
     @GetMapping("/")
     public String index(Model model) {
-        Iterable<Customer> customers = customerService.findAll();
+        List<CustomerResponse> customers = customerService.findAll();
         model.addAttribute("customers", customers);
         return "index";
     }
@@ -55,8 +58,8 @@ public class CustomerController {
             return "insertMain";
         }
         // フォームをエンティティに変換
-        Customer customer = customerForm.convertToEntity();
-        customerService.insert(customer);
+        CustomerRequest customerRequest = customerForm.convertToEntity();
+        customerService.insert(customerRequest);
         return "redirect:/";
     }
 }
