@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-service
+  labels:
+    app.kubernetes.io/name: ui-service
+    app.kubernetes.io/instance: ui-1
+    app.kubernetes.io/version: 0.0.1
+    app.kubernetes.io/component: api
+    app.kubernetes.io/part-of: kubernetes-practice
+    app.kubernetes.io/managed-by: manual
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: ui
+  ports:
+  - name: "8080"
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+
+# テスト
+# kubectl run --image=centos:7 --restart=Never --rm -i testpod -- curl -s http://ui-service:8080/

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: common-env
+data:
+  MYSQL_DATABASE: spring
+  MYSQL_USER: user
+  MYSQL_URL: jdbc:mysql://db-0.db-service:3306/spring?useSSL=false&serverTimezone=JST&allowPublicKeyRetrieval=true
+  LOGGING_LEVEL_MYBATIS: debug
+  API_HOST: api-service
+  API_PORT: "8090"

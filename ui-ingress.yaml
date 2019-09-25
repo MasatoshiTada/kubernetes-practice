@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ui-ingress
+  labels:
+    app.kubernetes.io/name: ui-ingress
+    app.kubernetes.io/instance: ui-ingress-1
+    app.kubernetes.io/version: 1.0.0
+    app.kubernetes.io/component: proxy
+    app.kubernetes.io/part-of: kubernetes-practice
+    app.kubernetes.io/managed-by: manual
+    kubernetes.io/ingress.class: nginx
+spec:
+  # default backend
+  backend:
+    serviceName: ui-service
+    servicePort: 8080
+  tls:
+    - hosts:
+        - localhost
